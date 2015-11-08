@@ -2,7 +2,7 @@ default[:mesos] = {
   :type    => "source",
   :mesosphere => {
     :with_zookeeper => false,
-    :build_version => 0.2.70.ubuntu1404
+    :build_version => "0.2.70.ubuntu1404"
   },
   :version => "0.25.0",
   :prefix  => "/usr/local",

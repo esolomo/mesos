@@ -99,7 +99,7 @@ if node[:mesos][:type] == 'mesosphere' then
   end
 
   bash "Downloading Base docker images" do
-    code "docker -D pull nginx  && docker -D pull agileek/docker-jenkins  && docker -D pull sonatype/nexus:oss"
+    code "docker -D pull agileek/docker-jenkins  && docker -D pull sonatype/nexus:oss"
     action :run
   end
 

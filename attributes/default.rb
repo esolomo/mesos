@@ -1,10 +1,10 @@
 default[:mesos] = {
   :type    => "source",
   :mesosphere => {
-    :with_zookeeper => false,
-    :build_version => "0.2.70.ubuntu1404"
+    :build_version => "0.2.70.ubuntu1404",
+    :with_zookeeper => false
   },
-  :version => "0.25.0",
+  :version => "0.20.1",
   :prefix  => "/usr/local",
   :home => "/opt",
   :build   => {
@@ -32,3 +32,4 @@ default[:mesos][:slave][:cgroups_hierarchy] = value_for_platform(
   },
   "default" => nil
 )
+

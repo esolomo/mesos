@@ -98,11 +98,6 @@ if node[:mesos][:type] == 'mesosphere' then
     action :run
   end
 
-  bash "Downloading Base docker images" do
-    code "docker -D pull agileek/docker-jenkins  && docker -D pull sonatype/nexus:oss"
-    action :run
-  end
-
   if node[:mesos][:slave] then
     node[:mesos][:slave].each do |key, val|
       next if %w(master_url

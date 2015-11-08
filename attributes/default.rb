@@ -25,7 +25,12 @@ default[:mesos] = {
   :deploy_with_sudo => "1"
 }
 
-default[:mesos][:mesosphere][:build_version] => "0.2.70.ubuntu1404"
+default[:mesos][:mesosphere][:build_version] => value_for_platform(
+  "ubuntu" => {
+    "default" => "0.2.70.ubuntu1404"
+  },
+  "default" => nil
+)
 
 default[:mesos][:slave][:cgroups_hierarchy] = value_for_platform(
   "centos" => {

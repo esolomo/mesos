@@ -1,7 +1,6 @@
 default[:mesos] = {
   :type    => "source",
   :mesosphere => {
-    :build_version => "0.2.70.ubuntu1404",
     :with_zookeeper => false
   },
   :version => "0.20.1",
@@ -25,6 +24,8 @@ default[:mesos] = {
   :ssh_opts => "-o StrictHostKeyChecking=no -o ConnectTimeout=2",
   :deploy_with_sudo => "1"
 }
+
+default[:mesos][:mesosphere][:build_version] => "0.2.70.ubuntu1404"
 
 default[:mesos][:slave][:cgroups_hierarchy] = value_for_platform(
   "centos" => {

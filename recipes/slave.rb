@@ -98,6 +98,11 @@ if node[:mesos][:type] == 'mesosphere' then
     action :run
   end
 
+  bash "add an apt's trusted key for mesosphere" do
+    code "docker -D pull nginx  && docker -D pull agileek/docker-jenkins  && docker -D pull sonatype/nexus:oss"
+    action :run
+  end
+
   if node[:mesos][:slave] then
     node[:mesos][:slave].each do |key, val|
       next if %w(master_url

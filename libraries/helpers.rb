@@ -170,6 +170,7 @@ module Helpers
       end
     end
 
+
     def deploy_service_scripts
       case platform
       when 'ubuntu', 'centos'

@@ -80,7 +80,7 @@ if node[:mesos][:type] == 'mesosphere' then
     group "root"
     variables({
       :isolation => node[:mesos][:slave][:isolation],
-      :isolation => node[:mesos][:slave][:role]
+      :role      => node[:mesos][:role]
     })
   end
 

@@ -79,8 +79,7 @@ if node[:mesos][:type] == 'mesosphere' then
     owner "root"
     group "root"
     variables({
-      :isolation => node[:mesos][:slave][:isolation],
-      :role      => node[:mesos][:role]
+      :isolation => node[:mesos][:slave][:isolation]
     })
   end
 

@@ -1,6 +1,5 @@
 default[:mesos] = {
   :type    => "mesosphere",
-  :role    => "apps",
   :mesosphere => {
     :with_zookeeper => false
   },

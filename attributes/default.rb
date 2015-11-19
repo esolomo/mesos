@@ -28,7 +28,7 @@ default[:mesos] = {
 
 default[:mesos][:mesosphere][:build_version] = value_for_platform(
   "ubuntu" => {
-    "default" => "-0.2.70.ubuntu1404"
+    "default" => "-0.2.70.ubuntu1504"
   },
   "default" => "-0.2.70.centos65"
 )

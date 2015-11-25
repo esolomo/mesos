@@ -86,7 +86,7 @@ module Helpers
       install_marathon
     end
 
-    def include_marathon
+    def include_docker
       install_docker
     end
 

@@ -25,7 +25,7 @@ module Helpers
     def service_provider
       case platform
       when 'ubuntu', 'centos'
-        Chef::Provider::Service::Upstart
+        Chef::Provider::Service::Systemd
       end
     end
   end
@@ -108,7 +108,7 @@ module Helpers
       case platform
       when 'ubuntu'
           service "zookeeper" do
-            provider Chef::Provider::Service::Upstart
+            provider Chef::Provider::Service::Systemd
             action :restart
           end
       when 'centos'

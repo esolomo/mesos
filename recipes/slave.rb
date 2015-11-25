@@ -13,6 +13,11 @@ else
   Chef::Application.fatal!("node['mesos']['type'] should be 'source' or 'mesosphere'.")
 end
 
+
+package ['docker.io']  do
+  action :install
+end
+
 deploy_dir = File.join(prefix, "var", "mesos", "deploy")
 
 directory deploy_dir do
@@ -24,7 +29,6 @@ directory deploy_dir do
 end
 
 include_mesos_recipe
-include_docker
 
 # for backword compatibility
 if node[:mesos][:slave][:master_url] then

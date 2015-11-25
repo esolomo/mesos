@@ -24,7 +24,7 @@ directory deploy_dir do
 end
 
 include_mesos_recipe
-include_marathon
+
 
 # for backword compatibility
 if node[:mesos][:cluster_name] then
@@ -161,5 +161,11 @@ if node[:mesos][:type] == 'mesosphere' then
     end
   end
 end
+
+
+package ['marathon']  do
+  action :install
+end
+
 
 

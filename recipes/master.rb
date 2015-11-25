@@ -159,3 +159,5 @@ if node[:mesos][:type] == 'mesosphere' then
     end
   end
 end
+
+install_marathon

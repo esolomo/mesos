@@ -82,6 +82,10 @@ module Helpers
       include_recipe "mesos::mesosphere"
     end
 
+    def include_marathon
+      include_recipe "mesos::marathon"
+    end
+
     def install_zookeeper
       # some preparation, if required.
       case platform
@@ -122,6 +126,19 @@ module Helpers
             provider Chef::Provider::Service::Init::Redhat
             action :restart
           end
+      end
+    end
+
+    def install_marathon
+      # some preparation, if required.
+      case platform
+      when 'centos'
+        bash "Installing Marathon" do
+          code <<-EOH
+            yum install -y -q marathon
+          EOH
+          action :run
+        end
       end
     end
 

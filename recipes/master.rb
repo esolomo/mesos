@@ -167,5 +167,9 @@ package ['marathon']  do
   action :install
 end
 
+service "marathon" do
+  provider Chef::Provider::Service::Systemd
+  action :start
+end
 
 

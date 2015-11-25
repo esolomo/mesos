@@ -18,6 +18,10 @@ package ['docker.io']  do
   action :install
 end
 
+service "docker" do
+  action :start
+end
+
 deploy_dir = File.join(prefix, "var", "mesos", "deploy")
 
 directory deploy_dir do

@@ -24,6 +24,7 @@ directory deploy_dir do
 end
 
 include_mesos_recipe
+include_docker
 
 # for backword compatibility
 if node[:mesos][:slave][:master_url] then

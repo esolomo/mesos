@@ -24,6 +24,7 @@ directory deploy_dir do
 end
 
 include_mesos_recipe
+include_marathon
 
 # for backword compatibility
 if node[:mesos][:cluster_name] then
@@ -74,6 +75,7 @@ template File.join(prefix, "var", "mesos", "deploy", "mesos-master-env.sh") do
   notifies :reload,  "service[mesos-master]", :delayed
   notifies :restart, "service[mesos-master]", :delayed
 end
+
 
 activate_master_service_scripts
 
@@ -160,4 +162,4 @@ if node[:mesos][:type] == 'mesosphere' then
   end
 end
 
-install_marathon
+

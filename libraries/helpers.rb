@@ -83,7 +83,11 @@ module Helpers
     end
 
     def include_marathon
-      include_recipe "mesos::marathon"
+      install_marathon
+    end
+
+    def include_marathon
+      install_docker
     end
 
     def install_zookeeper
@@ -135,7 +139,21 @@ module Helpers
       when 'centos'
         bash "Installing Marathon" do
           code <<-EOH
-            yum install -y -q marathon
+            apt-get install -y  marathon
+          EOH
+          action :run
+        end
+      end
+    end
+
+
+    def install_docker
+      # some preparation, if required.
+      case platform
+      when 'centos'
+        bash "Installing Marathon" do
+          code <<-EOH
+            apt-get install -y  docker.io
           EOH
           action :run
         end
